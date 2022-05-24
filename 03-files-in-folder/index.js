@@ -10,7 +10,7 @@ fs.readdir(path.join(__dirname, 'secret-folder'), {withFileTypes: true}, (err, f
             const { name, ext } = path.parse(pathFile);
             fs.stat(path.join(pathFile), (err, stats) => {
                 if(err) throw err;
-                stdout.write(`${name} - ${ext} - ${stats.size} bytes\n`)
+                stdout.write(`${name} - ${ext.slice(1)} - ${stats.size} bytes\n`)
             })
         }
 })
